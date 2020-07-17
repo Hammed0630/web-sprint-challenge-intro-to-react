@@ -13,7 +13,7 @@ const Card = styled.div`
   background-color: #B0C4DE;
   border: solid 1px grey;
   border-radius: 2%;
-  width: 30%;
+  width: 29%;
   margin: 2% 0;
   padding: 3%;
   box-shadow: 4px 4px black;
@@ -24,8 +24,8 @@ const Card = styled.div`
   h3.yellow {
     color: yellow;
   }
-  h3.red {
-    color: red;
+  h3.green {
+    color: green;
   }
   h3.spieces {
     color: blue;
@@ -49,7 +49,7 @@ const Cards = (props) => {
             <Card>
               <h2>{character.name}</h2>
               <h3 className="yellow">Gender: {character.gender}</h3>
-              <h3 className="red"> Status: {character.status}</h3>
+              <h3 className="green"> Status: {character.status}</h3>
               <h3 className="spieces"> Spieces: {character.species}</h3>
               <h3> Location: {character.location.name}</h3>
 
