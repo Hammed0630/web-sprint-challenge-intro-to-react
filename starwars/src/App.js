@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import axios from "axios";
+import Cards from "./components/Character";
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -19,7 +21,7 @@ const App = () => {
         console.log(setData);
       })
       .catch((err) => {
-        console.log("Uh oh Somethings is not right!!");
+        console.log("Morty YOU MESSED UP!!!");
       });
   }, []);
 
