@@ -27,7 +27,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">Rick and Morty Characters List</h1>
+      <h1 className="Header">Rick and Morty Characters </h1>
 
       <div>
         <Cards data={data} />
