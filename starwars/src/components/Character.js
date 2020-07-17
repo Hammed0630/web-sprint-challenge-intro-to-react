@@ -21,14 +21,18 @@ const Card = styled.div`
   h2 {
     color: #1e1b18;
   }
-  h3.yellow {
+  .yellow {
     color: yellow;
   }
-  h3.green {
+  .green {
     color: green;
   }
-  h3.spieces {
+  .spieces {
     color: blue;
+  }
+  .red{
+      color: red;
+
   }
 `;
 
@@ -38,8 +42,20 @@ const StyledImg = styled.img`
   max-width: 100%;
 `;
 
+
 const Cards = (props) => {
   const { data } = props;
+  function colorChange (type){
+      if (type == "unknown" ){
+          return "spieces"
+          }
+    else if (type == "Alive") {
+        return "green"
+    }
+    else {
+        return "red"
+    }
+  }
 
   return (
     <div>
@@ -49,7 +65,7 @@ const Cards = (props) => {
             <Card>
               <h2>{character.name}</h2>
               <h3 className="yellow">Gender: {character.gender}</h3>
-              <h3 className="green"> Status: {character.status}</h3>
+              <h3 className={colorChange(character.status)} > Status: {character.status}</h3>
               <h3 className="spieces"> Spieces: {character.species}</h3>
               <h3> Location: {character.location.name}</h3>
 
