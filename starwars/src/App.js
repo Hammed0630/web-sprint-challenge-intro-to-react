@@ -9,6 +9,9 @@ const App = () => {
   const [data, setData] = useState([]);
   console.log(data);
 
+  const [imageIndex, setImageIndex] = useState(0);
+  
+
   // Fetch characters from the API in an effect hook. Remember, anytime you have a
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
@@ -16,6 +19,7 @@ const App = () => {
   useEffect(() => {
     axios
       .get("https://rickandmortyapi.com/api/character/")
+      
       .then((res) => {
         setData(res.data.results);
         console.log(setData);
@@ -30,7 +34,9 @@ const App = () => {
       <h1 className="Header">Rick and Morty Characters </h1>
 
       <div>
-        <Cards data={data} />
+        <Cards data={data}
+         setImageIndex={setImageIndex}
+         imageIndex={imageIndex} />
       </div>
     </div>
   );
